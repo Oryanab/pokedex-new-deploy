@@ -1,8 +1,8 @@
 "use strict";
 const path = require("path");
 const express = require("express");
-const pokemonRouter = require("./routers/pokemonRouter");
-const userRouter = require("./routers/userRouter");
+const pokemonRouter = require("./backend/routers/pokemonRouter");
+const userRouter = require("./backend/routers/userRouter");
 const cors = require("cors");
 const app = express();
 const port = 8080;
@@ -14,7 +14,7 @@ app.use("/users", userRouter);
 app.use("/", express.static("./dist")); // serve main path as static dir
 app.get("/", function (req, res) {
   // serve main path as static file
-  res.sendFile(path.resolve("../dist/index.html"));
+  res.sendFile(path.resolve("./dist/index.html"));
 });
 
 app.listen(port);
