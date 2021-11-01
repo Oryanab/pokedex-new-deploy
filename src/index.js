@@ -4,7 +4,7 @@ import style from "./index.css";
 
 // get the pokemon json data:
 async function searchPokemon(pokemonName) {
-  let getPokemonJson = `http://localhost:8080/pokemon/${pokemonName}`;
+  let getPokemonJson = `/pokemon/${pokemonName}`;
   try {
     const pokemonJsonData = await axios.get(getPokemonJson);
     return pokemonJsonData["data"];
@@ -14,7 +14,7 @@ async function searchPokemon(pokemonName) {
 }
 
 async function signUpUser(userName) {
-  let userSignUpUrl = "http://localhost:8080/users/signup";
+  let userSignUpUrl = "/users/signup";
   try {
     const confirmSignUp = await axios({
       method: "post",
@@ -35,7 +35,7 @@ async function signUpUser(userName) {
 
 //const userName = document.querySelector("#username").value;
 async function userAuth(userName) {
-  let userAuth = `http://localhost:8080/users/${userName}/info`;
+  let userAuth = `/users/${userName}/info`;
   try {
     const checkUserData = await axios({
       method: "post",
@@ -89,7 +89,7 @@ async function createDomFromApi(pokemon) {
 document.querySelector("#catch").addEventListener("click", async (e) => {
   const userName = document.querySelector("#username").value;
   const pokemonID = document.querySelector("#pokemon-id").textContent;
-  let putRequestCatchPokemon = `http://localhost:8080/pokemon/catch/${pokemonID}`;
+  let putRequestCatchPokemon = `/pokemon/catch/${pokemonID}`;
   try {
     const requestCatchPokemon = await axios({
       method: "PUT",
@@ -116,7 +116,7 @@ document.querySelector("#catch").addEventListener("click", async (e) => {
 document.querySelector("#release").addEventListener("click", async (e) => {
   const userName = document.querySelector("#username").value;
   const pokemonID = document.querySelector("#pokemon-id").textContent;
-  let putRequestDeletePokemon = `http://localhost:8080/pokemon/release/${pokemonID}`;
+  let putRequestDeletePokemon = `/pokemon/release/${pokemonID}`;
   try {
     const requestDeletePokemon = await axios({
       method: "DELETE",
@@ -145,9 +145,7 @@ document.querySelector("#release").addEventListener("click", async (e) => {
 document.querySelector("#my-pokemon").addEventListener("click", async (e) => {
   const username = document.querySelector("#username").value;
   try {
-    const userCaughtPokemons = await axios.get(
-      `http://localhost:8080/users/${username}`
-    );
+    const userCaughtPokemons = await axios.get(`/users/${username}`);
     let allPokemons = "";
     for (let pokemon of userCaughtPokemons.data) {
       const { name } = await searchPokemon(pokemon);
