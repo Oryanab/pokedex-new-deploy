@@ -17,10 +17,4 @@ app.get("/", function (req, res) {
   res.sendFile(path.resolve("../dist/index.html"));
 });
 
-// app.use("/", express.static(path.resolve("/"))); // serve main path as static dir
-// app.get("/", function (req, res) {
-//   // serve main path as static file
-//   res.sendFile(path.resolve("./backend/michael.html"));
-// });
-
 app.listen(port);
