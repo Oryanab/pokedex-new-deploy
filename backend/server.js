@@ -11,14 +11,10 @@ app.use(cors());
 app.use("/pokemon", pokemonRouter);
 app.use("/users", userRouter);
 
-app.use("/", express.static(path.resolve("dist/index.html"))); // serve main path as static dir
+app.use("/", express.static("./dist")); // serve main path as static dir
 app.get("/", function (req, res) {
   // serve main path as static file
-  res.sendFile(
-    path.resolve(
-      "C:\\Users\\oa99b\\Documents\\GitHub\\pokedex-new-deploy\\dist\\index.html"
-    )
-  );
+  res.sendFile(path.resolve("../dist/index.html"));
 });
 
 // app.use("/", express.static(path.resolve("/"))); // serve main path as static dir
