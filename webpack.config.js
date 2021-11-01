@@ -18,8 +18,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /.css$/, use: ["style-loader", "css-loader"] },
-      { test: /.(svg|ico|png|gif|jpeg)$/, type: "asset/resource" },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.(svg|ico|png|gif|jpeg)$/, type: "asset/resource" },
     ],
   },
 
