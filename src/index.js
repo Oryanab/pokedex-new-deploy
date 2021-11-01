@@ -1,6 +1,6 @@
 "use strict";
 
-import "./index.css";
+import style from "./index.css";
 
 // get the pokemon json data:
 async function searchPokemon(pokemonName) {
