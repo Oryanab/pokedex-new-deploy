@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "dev": "nodemon ./app.js",
+    "dev": "nodemon ./backend/server.js",
     "lint": "eslint --fix main.js",
     "format": "prettier -w .",
     "build": "webpack",

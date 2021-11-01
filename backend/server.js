@@ -1,8 +1,8 @@
 "use strict";
 const path = require("path");
 const express = require("express");
-const pokemonRouter = require("./backend/routers/pokemonRouter");
-const userRouter = require("./backend/routers/userRouter");
+const pokemonRouter = require("./routers/pokemonRouter");
+const userRouter = require("./routers/userRouter");
 const cors = require("cors");
 const app = express();
 const port = 8080;
