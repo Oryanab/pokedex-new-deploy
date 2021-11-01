@@ -414,3 +414,12 @@ function lunchPokemonSuccessReleased() {
   const successMssageBox = document.getElementById("successMssageBox");
   successMssageBox.classList.add("active");
 }
+
+// npm install --save @babel/runtime
+// npm install --save-dev @babel/plugin-transform-runtime
+// {
+//     "presets": ["@babel/preset-env"],
+//     "plugins": [
+//         ["@babel/plugin-transform-runtime"]
+//     ]
+// }
