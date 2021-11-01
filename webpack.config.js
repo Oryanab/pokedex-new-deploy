@@ -11,10 +11,10 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: path.resolve(__dirname, "dist"),
+    //contentBase: path.resolve(__dirname, "./dist/index.html"),
     port: 5001,
     open: true,
-    hot: true,
+    //hot: true,
   },
   module: {
     rules: [
